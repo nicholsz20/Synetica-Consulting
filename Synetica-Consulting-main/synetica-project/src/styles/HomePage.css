@@ -1,0 +1,92 @@
+/* ========================
+   Homepage Hero Section
+======================== */
+.homepage-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 140px 20px 100px;
+    text-align: center;
+    
+    background: white url('../assets/backgrounds/HomeBackground.webp') center/cover no-repeat;
+  }
+  
+  /* ========================
+     Logo Styling
+  ======================== */
+  .hero-logo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-bottom: -30px;
+  }
+  
+  /* ========================
+     Title Styling
+  ======================== */
+  .hero-title {
+    font-size: clamp(21px, 2vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: -100px 0 40px;
+    color: white;
+    max-width: 800px;
+  }
+  
+  /* ========================
+     Button Styling
+  ======================== */
+  .hero-button {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ========================
+     Responsive Design
+  ======================== */
+  @media (max-width: 768px) {
+    .homepage-hero {
+      padding: 120px 15px 80px;
+    }
+  
+    .hero-logo {
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+  
+    .hero-title {
+      margin-bottom: 30px;
+    }
+  
+    .hero-button {
+      padding: 14px 32px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-logo {
+      max-width: 300px;
+    }
+  
+    .hero-button {
+      padding: 12px 28px;
+    }
+  }
+  

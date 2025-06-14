@@ -1,0 +1,1 @@
+# Synetica-Consulting

@@ -1,0 +1,204 @@
+@keyframes slideInDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes expandLine {
+    to {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Container */
+  .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Section Title */
+  .services-title {
+    text-align: center;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 0 1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideInDown 0.8s ease forwards;
+  }
+  
+  .services-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: clamp(40px, 8vw, 60px);
+    height: 3px;
+    background: linear-gradient(90deg, #1d4ed8, #333);
+    transform: translateX(-50%) scaleX(0);
+    animation: expandLine 0.8s ease 0.5s forwards;
+    border-radius: 2px;
+  }
+  
+  /* Service List */
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  /* Service Item */
+  .service-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: #0f172a;
+    color: white;
+    opacity: 0;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+  }
+  
+  /* Animate direction */
+  .service-item.left {
+    animation-name: slideInLeft;
+  }
+  .service-item.right {
+    animation-name: slideInRight;
+  }
+  
+  /* Hover Effects (desktop only) */
+  @media (hover: hover) and (pointer: fine) {
+    .service-item:hover {
+      transform: translateY(-6px);
+      background: rgba(249, 250, 251, 0.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+  
+    .service-item:hover .service-title,
+    .service-item:hover .service-description {
+      color: #60a5fa;
+    }
+  
+    .service-item:hover .service-number {
+      transform: scale(1.05);
+      background-color: #2563eb;
+    }
+  }
+  
+  /* Number Circle */
+  .service-number {
+    font-size: 1.75rem;
+    font-weight: bold;
+    background-color: #1d4ed8;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Content Block */
+  .service-content {
+    max-width: 600px;
+  }
+  
+  .service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .services-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  
+    .service-item {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+      gap: 1.25rem;
+    }
+  
+    .service-number {
+      font-size: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  
+    .service-title {
+      font-size: 1.25rem;
+    }
+  
+    .service-description {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-item {
+      padding: 1rem;
+      border-radius: 12px;
+    }
+  
+    .service-number {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.25rem;
+    }
+  
+    .service-title {
+      font-size: 1.1rem;
+    }
+  
+    .service-description {
+      font-size: 0.875rem;
+    }
+  }
+  

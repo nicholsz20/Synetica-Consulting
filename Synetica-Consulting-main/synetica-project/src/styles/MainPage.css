@@ -1,0 +1,52 @@
+/* Base layout for all sections */
+.section {
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Specific overrides */
+  #team-section {
+    min-height: 50vh;
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: 40px 15px;
+      min-height: auto;
+      align-items: flex-start;
+    }
+  
+    #home-section {
+      padding-top: 60px;
+    }
+  
+    #team-section {
+      min-height: 50vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section {
+      padding: 30px 12px;
+    }
+  
+    #team-section {
+      min-height: 40vh;
+    }
+  }
+  
+  @media (max-width: 768px) and (orientation: landscape) {
+    #home-section {
+      min-height: auto;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  
+    #team-section {
+      min-height: 30vh;
+    }
+  }
+  
